@@ -1,0 +1,120 @@
+# MARK:- Elaborations
+# ========================================
+
+sp {elaborate*get*seek
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <obj>)
+        
+    (<cmd> ^action get
+        ^target-object <obj-id>
+        -^status completed)
+    
+    (<agent> ^id agent_01)
+    (<obj> ^id <obj-id>)
+    
+    -(<agent> ^isholding <obj>)
+-->
+    (<s> ^desired.target-object <obj>)
+}
+
+sp {elaborate*get*success
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>)
+
+    (<cmd> ^action get
+        ^target-object <obj-id>)
+
+    (<agent> ^id agent_01
+        ^isholding.id <obj-id>)
+-->
+    (<cmd> ^status completed)
+}
+
+sp {elaborate*get*failure*non-manipulable
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+
+    (<cmd> ^action get
+        ^target-object <obj-id>
+        -^status completed)
+
+    (<obj> ^id <obj-id>
+        ^type staticobject)
+-->
+    (<s> ^failure non-manipulable)
+}
+
+sp {elaborate*get*failure*capacity-limit
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>)
+
+    (<cmd> ^action get
+        -^status completed)
+
+    (<agent> ^id agent_01
+        ^isholding <held-obj>)
+-->
+    (<s> ^failure capacity-limit)
+}
+
+
+
+# MARK:- Proposals
+# ========================================
+
+sp {propose*get
+    (state <s> ^name cognitive-robotics
+        ^environment.entity <agent>
+        ^desired.target-object <target-obj>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc>)
+
+    (<target-obj> ^isatlocation <loc>
+        ^type manipulableobject)
+-->
+    (<s> ^operator <o> + >)
+    (<o> ^name get
+        ^target <target-obj>)
+}
+
+
+
+# MARK:- Applications
+# ========================================
+
+sp {apply*get
+    (state <s> ^operator <o>
+        ^environment.entity <agent>)
+
+    (<o> ^name get
+        ^target <target-obj>)
+
+    (<target-obj> ^id <obj-id>
+        ^isatlocation <loc>)
+
+    (<agent> ^id agent_01)
+-->
+    (write (crlf) |[ACTION] Agent got | <obj-id> | at | <loc>)
+    (<agent> ^isholding <target-obj>)
+    (<target-obj> ^isatlocation <loc> -)
+}
+
+
+
+# MARK:- Rejections
+# ========================================
+
+sp {reject*get
+    (state <s> ^operator <o> +
+        ^failure <reason>)
+
+    (<o> ^name get)
+-->
+    (<s> ^operator <o> -)
+}

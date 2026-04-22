@@ -1,0 +1,178 @@
+# MARK:- Elaborations
+# ========================================
+
+sp {elaborate*set*transit
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <obj>)
+        
+    (<cmd> ^action set
+        ^target-object <obj-id>
+        ^destination <dest-loc>
+        -^status completed)
+    
+    (<agent> ^id agent_01
+        ^isholding <obj>
+        -^isatlocation <dest-loc>)
+       
+    (<obj> ^id <obj-id>)
+-->
+    (<s> ^desired.target-location <dest-loc>)
+}
+
+sp {elaborate*set*drop*at-destination
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <obj>)
+        
+    (<cmd> ^action set
+        ^target-object <obj-id>
+        ^destination <dest-loc>
+        -^status completed)
+    
+    (<agent> ^id agent_01
+        ^isholding <obj>
+        ^isatlocation <dest-loc>)
+        
+    (<obj> ^id <obj-id>)
+-->
+    (<s> ^desired.drop-object <obj>)
+}
+
+sp {elaborate*set*drop*in-place
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <obj>)
+        
+    (<cmd> ^action set
+        ^target-object <obj-id>
+        -^destination
+        -^status completed)
+    
+    (<agent> ^id agent_01
+        ^isholding <obj>)
+        
+    (<obj> ^id <obj-id>)
+-->
+    (<s> ^desired.drop-object <obj>)
+}
+
+sp {elaborate*set*success
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+        
+    (<cmd> ^action set
+        ^target-object <obj-id>
+        ^destination <dest-loc>)
+
+    (<obj> ^id <obj-id>
+        ^isatlocation <dest-loc>)
+-->
+    (<cmd> ^status completed)
+}
+
+sp {elaborate*set*failure*not-holding
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>)
+
+    (<cmd> ^action set
+        -^status completed)
+
+    (<agent> ^id agent_01
+        -^isholding <any>)
+-->
+    (<s> ^failure not-holding)
+}
+
+sp {elaborate*set*failure*non-manipulable
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+
+    (<cmd> ^action set
+        ^target-object <obj-id>
+        -^status completed)
+
+    (<obj> ^id <obj-id>
+        ^type staticobject)
+-->
+    (<s> ^failure non-manipulable)
+}
+
+
+
+# MARK:- Proposals
+# ========================================
+
+sp {propose*infer-target
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>)
+        
+    (<cmd> ^action set
+        -^target-object
+        -^status completed)
+        
+    (<agent> ^id agent_01
+        ^isholding <held-obj>)
+-->
+    (<s> ^operator <o> + >)
+    (<o> ^name infer-target
+        ^command <cmd>
+        ^target <held-obj>)
+}
+
+sp {propose*set-object
+    (state <s> ^name cognitive-robotics
+        ^environment.entity <agent>
+        ^desired.drop-object <target-obj>)
+
+    (<agent> ^id agent_01
+        ^isholding <target-obj>)
+-->
+    (<s> ^operator <o> + >)
+    (<o> ^name set-object
+        ^target <target-obj>)
+}
+
+
+
+# MARK:- Applications
+# ========================================
+
+sp {apply*infer-target
+    (state <s> ^operator <o>)
+    
+    (<o> ^name infer-target
+        ^command <cmd>
+        ^target <obj>)
+        
+    (<obj> ^id <obj-id>)
+-->
+    (<cmd> ^target-object <obj-id>)
+}
+
+sp {apply*set-object
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^environment.entity <agent>)
+
+    (<o> ^name set-object
+        ^target <target-obj>)
+
+    (<target-obj> ^id <obj-id>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <current-loc>
+        ^isholding <target-obj>)
+-->
+    (write (crlf) |[ACTION] Agent set | <obj-id> | at | <current-loc>)
+    (<cmd> ^status completed)
+    (<agent> ^isholding <target-obj> -)
+    (<target-obj> ^isatlocation <current-loc>)
+}

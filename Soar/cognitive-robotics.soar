@@ -1,0 +1,606 @@
+sp {elaborate*state*structure
+    (state <s> ^superstate nil)
+-->
+    (<s> ^environment <env>)
+}
+
+
+sp {propose*init-environment
+    (state <s> ^superstate nil)
+    -(<s> ^name cognitive-robotics)
+-->
+    (<s> ^operator <o> + >)
+    (<o> ^name init-environment)
+}
+
+
+sp {apply*init-environment*base
+    (state <s> ^operator.name init-environment
+        -^name cognitive-robotics)
+-->
+    (<s> ^name cognitive-robotics)
+}
+
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: AGENT
+# ==================================================
+
+sp {apply*init-environment*agent_01
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id agent_01
+        ^isatlocation loc_0_0
+        ^type agent
+        ^type namedindividual
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: APPLE
+# ==================================================
+
+sp {apply*init-environment*apple_01
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id apple_01
+        ^hascolor red
+        ^isatlocation loc_0_3
+        ^type apple
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*apple_02
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id apple_02
+        ^hascolor green
+        ^isatlocation loc_3_3
+        ^type apple
+        ^type namedindividual
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: CLASS
+# ==================================================
+
+sp {apply*init-environment*agent
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id agent
+        ^subclassof robot
+        ^type class
+    )
+}
+
+sp {apply*init-environment*apple
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id apple
+        ^subclassof manipulableobject
+        ^type class
+    )
+}
+
+sp {apply*init-environment*cup
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id cup
+        ^subclassof manipulableobject
+        ^type class
+    )
+}
+
+sp {apply*init-environment*environment
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id environment
+        ^subclassof roboticenvironment
+        ^type class
+    )
+}
+
+sp {apply*init-environment*gridlocation
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id gridlocation
+        ^subclassof environment
+        ^type class
+    )
+}
+
+sp {apply*init-environment*manipulableobject
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id manipulableobject
+        ^subclassof physicalobject
+        ^type class
+    )
+}
+
+sp {apply*init-environment*physicalobject
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id physicalobject
+        ^type class
+    )
+}
+
+sp {apply*init-environment*staticobject
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id staticobject
+        ^subclassof physicalobject
+        ^type class
+    )
+}
+
+sp {apply*init-environment*table
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id table
+        ^subclassof staticobject
+        ^type class
+    )
+}
+
+sp {apply*init-environment*trashcan
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id trashcan
+        ^subclassof staticobject
+        ^type class
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: CUP
+# ==================================================
+
+sp {apply*init-environment*cup_01
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id cup_01
+        ^hascolor blue
+        ^isatlocation loc_1_3
+        ^type cup
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*cup_02
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id cup_02
+        ^hascolor yellow
+        ^isatlocation loc_3_0
+        ^type cup
+        ^type namedindividual
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: DATATYPEPROPERTY
+# ==================================================
+
+sp {apply*init-environment*hascolor
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id hascolor
+        ^range string
+        ^type datatypeproperty
+    )
+}
+
+sp {apply*init-environment*hasxcoordinate
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id hasxcoordinate
+        ^range int
+        ^type datatypeproperty
+    )
+}
+
+sp {apply*init-environment*hasycoordinate
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id hasycoordinate
+        ^range int
+        ^type datatypeproperty
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: GRIDLOCATION
+# ==================================================
+
+sp {apply*init-environment*loc_0_0
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_0_0
+        ^hasxcoordinate 0
+        ^hasycoordinate 0
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_0_1
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_0_1
+        ^hasxcoordinate 0
+        ^hasycoordinate 1
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_0_2
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_0_2
+        ^hasxcoordinate 0
+        ^hasycoordinate 2
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_0_3
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_0_3
+        ^hasxcoordinate 0
+        ^hasycoordinate 3
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_1_0
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_1_0
+        ^hasxcoordinate 1
+        ^hasycoordinate 0
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_1_1
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_1_1
+        ^hasxcoordinate 1
+        ^hasycoordinate 1
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_1_2
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_1_2
+        ^hasxcoordinate 1
+        ^hasycoordinate 2
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_1_3
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_1_3
+        ^hasxcoordinate 1
+        ^hasycoordinate 3
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_2_0
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_2_0
+        ^hasxcoordinate 2
+        ^hasycoordinate 0
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_2_1
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_2_1
+        ^hasxcoordinate 2
+        ^hasycoordinate 1
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_2_2
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_2_2
+        ^hasxcoordinate 2
+        ^hasycoordinate 2
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_2_3
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_2_3
+        ^hasxcoordinate 2
+        ^hasycoordinate 3
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_3_0
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_3_0
+        ^hasxcoordinate 3
+        ^hasycoordinate 0
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_3_1
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_3_1
+        ^hasxcoordinate 3
+        ^hasycoordinate 1
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_3_2
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_3_2
+        ^hasxcoordinate 3
+        ^hasycoordinate 2
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+sp {apply*init-environment*loc_3_3
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id loc_3_3
+        ^hasxcoordinate 3
+        ^hasycoordinate 3
+        ^type gridlocation
+        ^type namedindividual
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: OBJECTPROPERTY
+# ==================================================
+
+sp {apply*init-environment*containsobject
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id containsobject
+        ^inverseof isatlocation
+        ^type objectproperty
+    )
+}
+
+sp {apply*init-environment*isatlocation
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id isatlocation
+        ^domain n86cba51865af4d489b3669d1faa9cdc6
+        ^range gridlocation
+        ^type functionalproperty
+        ^type objectproperty
+    )
+}
+
+sp {apply*init-environment*isheldby
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id isheldby
+        ^inverseof isholding
+        ^type objectproperty
+    )
+}
+
+sp {apply*init-environment*isholding
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id isholding
+        ^domain robot
+        ^range manipulableobject
+        ^type objectproperty
+    )
+}
+
+sp {apply*init-environment*isontopof
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id isontopof
+        ^domain manipulableobject
+        ^range physicalobject
+        ^type objectproperty
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: TABLE
+# ==================================================
+
+sp {apply*init-environment*table_01
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id table_01
+        ^isatlocation loc_3_0
+        ^type namedindividual
+        ^type table
+    )
+}
+
+
+# ==================================================
+# ONTOLOGY CATEGORY: TRASHCAN
+# ==================================================
+
+sp {apply*init-environment*trashcan_01
+    (state <s> ^operator.name init-environment
+        ^environment <env>
+        -^name cognitive-robotics)
+-->
+    (<env> ^entity <e>)
+    (<e> ^id trashcan_01
+        ^isatlocation loc_3_3
+        ^type namedindividual
+        ^type trashcan
+    )
+}

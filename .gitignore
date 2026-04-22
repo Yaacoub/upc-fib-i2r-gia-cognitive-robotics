@@ -1,0 +1,5 @@
+.DS_Store
+.env
+/*.txt
+/*.pdf
+/Paper/*

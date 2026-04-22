@@ -1,0 +1,430 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#"
+     xml:base="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:annotation="http://purl.org/ieee1872-owl/annotation#">
+    <owl:Ontology rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics">
+        <owl:imports rdf:resource="http://purl.org/ieee1872-owl/cora-bare"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#containsObject -->
+
+    <owl:ObjectProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#containsObject">
+        <owl:inverseOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isAtLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isAtLocation -->
+
+    <owl:ObjectProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isAtLocation">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://purl.org/ieee1872-owl/cora-bare#Robot"/>
+                    <rdf:Description rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#PhysicalObject"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isHeldBy -->
+
+    <owl:ObjectProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isHeldBy">
+        <owl:inverseOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isHolding"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isHolding -->
+
+    <owl:ObjectProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isHolding">
+        <rdfs:domain rdf:resource="http://purl.org/ieee1872-owl/cora-bare#Robot"/>
+        <rdfs:range rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#ManipulableObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isOnTopOf -->
+
+    <owl:ObjectProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#isOnTopOf">
+        <rdfs:domain rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#ManipulableObject"/>
+        <rdfs:range rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#PhysicalObject"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#hasColor -->
+
+    <owl:DatatypeProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#hasColor">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#hasXCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#hasXCoordinate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#hasYCoordinate -->
+
+    <owl:DatatypeProperty rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#hasYCoordinate">
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#int"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Agent -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Agent">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ieee1872-owl/cora-bare#Robot"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#ManipulableObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#ManipulableObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Environment -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Environment">
+        <rdfs:subClassOf rdf:resource="http://purl.org/ieee1872-owl/cora-bare#RoboticEnvironment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Environment"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#ManipulableObject -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#ManipulableObject">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#PhysicalObject -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#PhysicalObject"/>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#StaticObject -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#StaticObject">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#PhysicalObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Table -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Table">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#StaticObject"/>
+    </owl:Class>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#TrashCan -->
+
+    <owl:Class rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#TrashCan">
+        <rdfs:subClassOf rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#StaticObject"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Agent_01 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Agent_01">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Agent"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple_01 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple_01">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_3"/>
+        <hasColor>red</hasColor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple_02 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple_02">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Apple"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_3"/>
+        <hasColor>green</hasColor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup_01 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup_01">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_3"/>
+        <hasColor>blue</hasColor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup_02 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup_02">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Cup"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_0"/>
+        <hasColor>yellow</hasColor>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_0 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_0">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasYCoordinate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_1">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasYCoordinate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_2">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_0_3">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_0 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_0">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_1">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_2">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_1_3">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_0 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_0">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_1">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_2">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_2_3">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_0 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_0">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_1 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_1">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">1</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_2 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_2">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">2</hasYCoordinate>
+    </owl:NamedIndividual>
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_3 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_3">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#GridLocation"/>
+        <hasXCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasXCoordinate>
+        <hasYCoordinate rdf:datatype="http://www.w3.org/2001/XMLSchema#int">3</hasYCoordinate>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Table_01 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Table_01">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Table"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_0"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#TrashCan_01 -->
+
+    <owl:NamedIndividual rdf:about="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#TrashCan_01">
+        <rdf:type rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#TrashCan"/>
+        <isAtLocation rdf:resource="https://www.upc.edu/yaacoub/ontologies/cognitive-robotics#Loc_3_3"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

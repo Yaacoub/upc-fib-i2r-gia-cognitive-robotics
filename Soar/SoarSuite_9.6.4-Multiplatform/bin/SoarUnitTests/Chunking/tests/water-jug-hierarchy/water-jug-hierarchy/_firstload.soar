@@ -1,0 +1,6 @@
+# this helps Soar reorder conditions so matching is more efficient
+multi-attributes jug 3
+
+srand 1 # For consistency for testing
+chunk always
+chunk add-osk on

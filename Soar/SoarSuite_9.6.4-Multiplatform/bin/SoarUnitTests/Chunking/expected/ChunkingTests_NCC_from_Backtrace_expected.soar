@@ -1,0 +1,10 @@
+sp {answer*apply25f2*OpNoChange*t3-1
+    (state <s1> ^superstate nil ^test-item2 <t1>
+          -^test-item2 { <t2> <> <t1> > <t1> } ^test-item2 { <t3> < <t1> }
+          -^test-item2 { <t4> <> <t3> <> <t1> })
+    -->
+    (<s1> ^highest <t1> + ^lowest <t3> + ^test-done 1 +)
+}
+
+
+

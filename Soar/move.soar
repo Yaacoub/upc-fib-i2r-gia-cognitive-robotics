@@ -1,0 +1,239 @@
+# MARK:- Elaborations
+# ========================================
+
+sp {elaborate*move*coordinates
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <loc>)
+
+    (<cmd> ^action move
+        ^desired-x <x>
+        ^desired-y <y>)
+
+    (<loc> ^id <loc-id>
+        ^hasxcoordinate <x>
+        ^hasycoordinate <y>)
+-->
+    (<cmd> ^destination <loc-id>)
+}
+
+sp {elaborate*move*destination
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>)
+
+    (<cmd> ^action move
+        ^destination <loc-id>)
+-->
+    (<s> ^desired.target-location <loc-id>)
+}
+
+sp {elaborate*move*object
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+
+    (<cmd> ^action move
+        ^target-class <target-class>
+        -^destination-modifiers)
+
+    (<obj> ^type <target-class>
+        ^isatlocation <loc-id>)
+-->
+    (<cmd> ^destination <loc-id>)
+}
+
+sp {elaborate*move*default-distance
+    (state <s> ^operator <o>
+        ^command <cmd>)
+
+    (<o> ^name move)
+
+    (<cmd> ^direction <dir>
+        -^distance)
+-->
+    (<cmd> ^distance 1)
+}
+
+sp {elaborate*move*success
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>)
+
+    (<cmd> ^action move
+        ^destination <loc-id>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc-id>)
+-->
+    (<cmd> ^status completed)
+}
+
+sp {elaborate*move*failure*out-of-bounds
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>)
+
+    (<cmd> ^action move
+        ^desired-x <x>
+        ^desired-y <y>)
+        
+    -{
+        (<s> ^environment.entity <loc>)
+        (<loc> ^hasxcoordinate <x>
+            ^hasycoordinate <y>)
+    }
+-->
+    (<s> ^failure out-of-bounds)
+}
+
+
+
+# MARK:- Proposals
+# ========================================
+
+sp {propose*move*location
+    (state <s> ^name cognitive-robotics
+        ^environment.entity <agent>
+        ^desired.target-location <new-loc-id>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc-id>
+        -^isatlocation <new-loc-id>)
+-->
+    (<s> ^operator <o> + =)
+    (<o> ^name move
+        ^destination <new-loc-id>)
+}
+
+sp {propose*move*direction
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>)
+
+    (<cmd> ^action move
+        ^direction
+        -^destination)
+-->
+    (<s> ^operator <o> + >)
+    (<o> ^name move)
+}
+
+
+
+# MARK:- Applications
+# ========================================
+
+sp {apply*move
+    (state <s> ^operator <o>
+        ^environment.entity <agent>)
+
+    (<o> ^name move
+        ^destination <loc-id>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <old-loc-id>)
+-->
+    (write (crlf) |[ACTION] Agent moved from | <old-loc-id> | to | <loc-id>)
+    (<agent> ^isatlocation <loc-id>
+        ^isatlocation <old-loc-id> -)
+}
+
+sp {apply*move*north
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <loc>)
+
+    (<o> ^name move)
+
+    (<cmd> ^direction north
+        ^distance <d>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc-id>)
+
+    (<loc> ^id <loc-id>
+        ^hasxcoordinate <x>
+        ^hasycoordinate <y>)
+-->
+    (<cmd> ^desired-x <x>)
+    (<cmd> ^desired-y (+ <y> <d>))
+}
+
+sp {apply*move*east
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <loc>)
+
+    (<o> ^name move)
+
+    (<cmd> ^direction east
+        ^distance <d>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc-id>)
+
+    (<loc> ^id <loc-id>
+        ^hasxcoordinate <x>
+        ^hasycoordinate <y>)
+-->
+    (<cmd> ^desired-x (+ <x> <d>))
+    (<cmd> ^desired-y <y>)
+}
+
+sp {apply*move*south
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <loc>)
+
+    (<o> ^name move)
+
+    (<cmd> ^direction south
+        ^distance <d>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc-id>)
+
+    (<loc> ^id <loc-id>
+        ^hasxcoordinate <x>
+        ^hasycoordinate <y>)
+-->
+    (<cmd> ^desired-x <x>)
+    (<cmd> ^desired-y (- <y> <d>))
+}
+
+sp {apply*move*west
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^environment.entity <agent>
+        ^environment.entity <loc>)
+
+    (<o> ^name move)
+
+    (<cmd> ^direction west
+        ^distance <d>)
+
+    (<agent> ^id agent_01
+        ^isatlocation <loc-id>)
+
+    (<loc> ^id <loc-id>
+        ^hasxcoordinate <x>
+        ^hasycoordinate <y>)
+-->
+    (<cmd> ^desired-x (- <x> <d>))
+    (<cmd> ^desired-y <y>)
+}
+
+
+
+# MARK:- Rejections
+# ========================================
+
+sp {reject*move
+    (state <s> ^operator <o> +
+        ^failure out-of-bounds)
+
+    (<o> ^name move)
+-->
+    (<s> ^operator <o> -)
+}

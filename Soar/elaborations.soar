@@ -1,0 +1,87 @@
+# MARK:- Target
+# ========================================
+
+sp {elaborate*target-class
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+
+    (<cmd> ^target-class <target-class>
+        -^target-modifiers)
+
+    (<obj> ^id <obj-id>
+        ^type <target-class>)
+-->
+    (<cmd> ^target-object <obj-id>)
+}
+
+sp {elaborate*target-class+modifier
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+
+    (<cmd> ^target-class <target-class>
+        ^target-modifiers <mod>)
+
+    (<obj> ^id <obj-id>
+        ^type <target-class>
+        ^hascolor <mod>)
+-->
+    (<cmd> ^target-object <obj-id>)
+}
+
+sp {elaborate*target-object+location
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <obj>)
+
+    (<cmd> ^target-object <obj-id>)
+
+    (<obj> ^id <obj-id>
+        ^isatlocation <loc-id>)
+-->
+    (<cmd> ^target-location <loc-id>)
+}
+
+
+
+# MARK:- Destination
+# ========================================
+
+sp {elaborate*destination-class
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <dest-obj>)
+
+    (<cmd> ^destination-class <dest-class>)
+
+    (<dest-obj> ^type <dest-class>
+        ^isatlocation <dest-loc>)
+-->
+    (<cmd> ^destination <dest-loc>)
+}
+
+
+
+
+
+# MARK:- Other
+# ========================================
+
+sp {elaborate*subclass-inference
+    (state <s> ^environment.entity <instance>
+        ^environment.entity <class>)
+    
+    (<instance> ^type <class-name>)
+    (<class> ^id <class-name>
+        ^subclassof <super-class>)
+-->
+    (<instance> ^type <super-class>)
+}
+
+sp {elaborate*desired-location-from-object
+    (state <s> ^desired.target-object <obj>)
+    (<obj> ^isatlocation <loc>)
+-->
+    (<s> ^desired.target-location <loc>)
+}

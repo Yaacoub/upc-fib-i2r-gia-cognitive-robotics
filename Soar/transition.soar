@@ -1,0 +1,79 @@
+# MARK:- Elaborations
+# ========================================
+
+sp {elaborate*success
+    (state <s> ^superstate <ss>
+        ^attribute state
+        ^choices none)
+        
+    (<ss> ^name cognitive-robotics
+        ^command <cmd>)
+    
+    (<cmd> ^status completed
+        ^next none)
+-->
+    (write (crlf) |[SUCCESS] Command sequence execution complete. Agent is idle.| (crlf))
+    (halt)
+}
+
+sp {elaborate*failure
+    (state <s> ^superstate <ss>
+        ^attribute state
+        ^choices none)
+        
+    (<ss> ^name cognitive-robotics
+        ^failure <reason>)
+-->
+    (write (crlf) |[FAILURE] Command rejected by constraint: | <reason> (crlf))
+    (halt)
+}
+
+sp {elaborate*halt-on-stuck
+    (state <s> ^superstate <ss>
+        ^attribute state
+        ^choices none)
+        
+    (<ss> ^name cognitive-robotics
+        ^command <cmd>
+        -^failure
+    )
+
+    (<cmd> -^status completed)
+-->
+    (write (crlf) |[STUCK] No operator applicable and no success/failure detected. Halting.| (crlf))
+    (halt)
+}
+
+
+
+# MARK:- Proposals
+# ========================================
+
+sp {propose*transition
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>)
+
+    (<cmd> ^status completed
+        ^next {<next-cmd> <> none})
+-->
+    (<s> ^operator <o> + >)
+    (<o> ^name transition-command
+        ^current-cmd <cmd>
+        ^next-cmd <next-cmd>)
+}
+
+
+
+# MARK:- Applications
+# ========================================
+
+sp {apply*transition
+    (state <s> ^operator <o>)
+    (<o> ^name transition-command
+        ^current-cmd <cmd>
+        ^next-cmd <next-cmd>)
+-->
+    (write (crlf) |[SYSTEM] Command finished. Transitioning to next command...| (crlf))
+    (<s> ^command <cmd> -
+        ^command <next-cmd>)
+}

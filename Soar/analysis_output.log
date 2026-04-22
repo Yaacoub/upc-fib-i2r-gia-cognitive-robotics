@@ -1,0 +1,993 @@
+==================================================
+CMD-1: Move to (2,2).
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "desired-x": 2,
+    "desired-y": 2
+  }
+]
+
+LLM Token Usage: input=702, output=23, total=1153
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^desired-x 2)
+    (<cmd1> ^desired-y 2)
+    (<cmd1> ^destination loc_2_2)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_2_2
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-2: Move to [-1, 5].
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "desired-x": -1,
+    "desired-y": 5
+  }
+]
+
+LLM Token Usage: input=703, output=41, total=1096
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^desired-x -1)
+    (<cmd1> ^desired-y 5)
+    (<cmd1> ^destination loc_-1_5)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    ==>S: S2 (state no-change)
+[FAILURE] Command rejected by constraint: out-of-bounds
+
+==================================================
+CMD-3: Move north.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "direction": "north"
+  }
+]
+
+LLM Token Usage: input=698, output=30, total=1136
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^direction north)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+     3:    O: O3 (move)
+[ACTION] Agent moved from loc_0_0 to loc_0_1
+     4:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-4: Move east.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "direction": "east"
+  }
+]
+
+LLM Token Usage: input=698, output=30, total=945
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^direction east)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+     3:    O: O3 (move)
+[ACTION] Agent moved from loc_0_0 to loc_1_0
+     4:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-5: Move south.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "direction": "south"
+  }
+]
+
+LLM Token Usage: input=698, output=25, total=1102
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^direction south)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+     3:    ==>S: S2 (state no-change)
+[FAILURE] Command rejected by constraint: out-of-bounds
+
+==================================================
+CMD-6: Move west.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "direction": "west"
+  }
+]
+
+LLM Token Usage: input=698, output=25, total=1024
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^direction west)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+     3:    ==>S: S2 (state no-change)
+[FAILURE] Command rejected by constraint: out-of-bounds
+
+==================================================
+CMD-7: Move up.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "direction": "north"
+  }
+]
+
+LLM Token Usage: input=698, output=30, total=1406
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^direction north)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+     3:    O: O3 (move)
+[ACTION] Agent moved from loc_0_0 to loc_0_1
+     4:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-8: Move up by 2.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "direction": "north",
+    "distance": 2
+  }
+]
+
+LLM Token Usage: input=701, output=37, total=1303
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^direction north)
+    (<cmd1> ^distance 2)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+     3:    O: O3 (move)
+[ACTION] Agent moved from loc_0_0 to loc_0_2
+     4:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-9: Head towards the trashcan.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "move",
+    "destination-class": "trashcan"
+  }
+]
+
+LLM Token Usage: input=701, output=33, total=2849
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action move)
+    (<cmd1> ^destination-class trashcan)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_3
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-10: Where is agent_01 located?
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-location",
+    "target-class": "agent"
+  }
+]
+
+LLM Token Usage: input=703, output=34, total=1064
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-location)
+    (<cmd1> ^target-class agent)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-location)
+[QUERY] agent_01 is at loc_0_0
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-11: Tell me the coordinates of the green apple.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-location",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ]
+  }
+]
+
+LLM Token Usage: input=704, output=50, total=1304
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-location)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers green)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-location)
+[QUERY] apple_02 is at loc_3_3
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-12: What are you holding?
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-inventory",
+    "target-class": "agent"
+  }
+]
+
+LLM Token Usage: input=700, output=29, total=1096
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-inventory)
+    (<cmd1> ^target-class agent)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-inventory)
+[QUERY] agent_01 is holding nothing
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-13: Pick up the green apple, then tell me what you are holding.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ]
+  },
+  {
+    "action": "query-inventory",
+    "target-class": "agent"
+  }
+]
+
+LLM Token Usage: input=709, output=74, total=1373
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers green)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action query-inventory)
+    (<cmd2> ^target-class agent)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_3
+     3:    O: O3 (get)
+[ACTION] Agent got apple_02 at loc_3_3
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O5 (query-inventory)
+[QUERY] agent_01 is holding apple_02
+     6:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-14: Is the yellow cup on the table?
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-boolean",
+    "target-class": "cup",
+    "target-modifiers": [
+      "yellow"
+    ],
+    "destination-class": "table"
+  }
+]
+
+LLM Token Usage: input=703, output=60, total=1326
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-boolean)
+    (<cmd1> ^target-class cup)
+    (<cmd1> ^target-modifiers yellow)
+    (<cmd1> ^destination-class table)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-boolean)
+[QUERY] Is cup_02 at/in table? TRUE
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-15: Is the blue cup on the table?
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-boolean",
+    "target-class": "cup",
+    "target-modifiers": [
+      "blue"
+    ],
+    "destination-class": "table"
+  }
+]
+
+LLM Token Usage: input=703, output=60, total=1131
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-boolean)
+    (<cmd1> ^target-class cup)
+    (<cmd1> ^target-modifiers blue)
+    (<cmd1> ^destination-class table)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-boolean)
+[QUERY] Is cup_01 at/in table? FALSE
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-16: Does the trashcan contain the green apple?
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-boolean",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ],
+    "destination-class": "trashcan"
+  }
+]
+
+LLM Token Usage: input=704, output=61, total=1326
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-boolean)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers green)
+    (<cmd1> ^destination-class trashcan)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-boolean)
+[QUERY] Is apple_02 at/in trashcan? TRUE
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-17: Does the trashcan contain the red apple?
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "query-boolean",
+    "target-class": "apple",
+    "target-modifiers": [
+      "red"
+    ],
+    "destination-class": "trashcan"
+  }
+]
+
+LLM Token Usage: input=704, output=61, total=1250
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action query-boolean)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers red)
+    (<cmd1> ^destination-class trashcan)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (query-boolean)
+[QUERY] Is apple_01 at/in trashcan? FALSE
+     3:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-18: Bring the green apple to loc_0_0.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ]
+  },
+  {
+    "action": "set",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ],
+    "destination-class": "gridlocation",
+    "desired-x": 0,
+    "desired-y": 0
+  }
+]
+
+LLM Token Usage: input=706, output=118, total=3544
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers green)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action set)
+    (<cmd2> ^target-class apple)
+    (<cmd2> ^target-modifiers green)
+    (<cmd2> ^destination-class gridlocation)
+    (<cmd2> ^desired-x 0)
+    (<cmd2> ^desired-y 0)
+    (<cmd2> ^destination loc_0_0)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_3
+     3:    O: O3 (get)
+[ACTION] Agent got apple_02 at loc_3_3
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O6 (move)
+[ACTION] Agent moved from loc_3_3 to loc_0_0
+     6:    O: O7 (set-object)
+[ACTION] Agent set apple_02 at loc_0_0
+     7:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-19: Fetch the yellow cup and put it in the trashcan.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "cup",
+    "target-modifiers": [
+      "yellow"
+    ]
+  },
+  {
+    "action": "set",
+    "destination-class": "trashcan"
+  }
+]
+
+LLM Token Usage: input=707, output=73, total=1436
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class cup)
+    (<cmd1> ^target-modifiers yellow)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action set)
+    (<cmd2> ^destination-class trashcan)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_0
+     3:    O: O3 (get)
+[ACTION] Agent got cup_02 at loc_3_0
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O5 (infer-target)
+     6:    O: O6 (move)
+[ACTION] Agent moved from loc_3_0 to loc_3_3
+     7:    O: O7 (set-object)
+[ACTION] Agent set cup_02 at loc_3_3
+     8:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-20: Throw the red fruit into the bin.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "apple",
+    "target-modifiers": [
+      "red"
+    ]
+  },
+  {
+    "action": "set",
+    "target-class": "apple",
+    "target-modifiers": [
+      "red"
+    ],
+    "destination-class": "trashcan"
+  }
+]
+
+LLM Token Usage: input=703, output=99, total=2076
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers red)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action set)
+    (<cmd2> ^target-class apple)
+    (<cmd2> ^target-modifiers red)
+    (<cmd2> ^destination-class trashcan)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_0_3
+     3:    O: O3 (get)
+[ACTION] Agent got apple_01 at loc_0_3
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O6 (move)
+[ACTION] Agent moved from loc_0_3 to loc_3_3
+     6:    O: O7 (set-object)
+[ACTION] Agent set apple_01 at loc_3_3
+     7:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-21: Bring the red apple to loc_1_3.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "apple",
+    "target-modifiers": [
+      "red"
+    ]
+  },
+  {
+    "action": "set",
+    "target-class": "apple",
+    "target-modifiers": [
+      "red"
+    ],
+    "destination-class": "gridlocation",
+    "desired-x": 1,
+    "desired-y": 3
+  }
+]
+
+LLM Token Usage: input=706, output=118, total=2288
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers red)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action set)
+    (<cmd2> ^target-class apple)
+    (<cmd2> ^target-modifiers red)
+    (<cmd2> ^destination-class gridlocation)
+    (<cmd2> ^desired-x 1)
+    (<cmd2> ^desired-y 3)
+    (<cmd2> ^destination loc_1_3)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_0_3
+     3:    O: O3 (get)
+[ACTION] Agent got apple_01 at loc_0_3
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O6 (move)
+[ACTION] Agent moved from loc_0_3 to loc_1_3
+     6:    O: O7 (set-object)
+[ACTION] Agent set apple_01 at loc_1_3
+     7:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-22: Pick up the green apple, then pick up the yellow cup.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ]
+  },
+  {
+    "action": "get",
+    "target-class": "cup",
+    "target-modifiers": [
+      "yellow"
+    ]
+  }
+]
+
+LLM Token Usage: input=708, output=83, total=1312
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers green)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action get)
+    (<cmd2> ^target-class cup)
+    (<cmd2> ^target-modifiers yellow)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_3
+     3:    O: O3 (get)
+[ACTION] Agent got apple_02 at loc_3_3
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O5 (move)
+[ACTION] Agent moved from loc_3_3 to loc_3_0
+     6:    ==>S: S2 (state no-change)
+[FAILURE] Command rejected by constraint: capacity-limit
+
+==================================================
+CMD-23: Pick up the table.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "table"
+  }
+]
+
+LLM Token Usage: input=700, output=32, total=1138
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class table)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_0
+     3:    ==>S: S2 (state no-change)
+[FAILURE] Command rejected by constraint: non-manipulable
+
+==================================================
+CMD-24: Pick up the green apple, then drop it.
+==================================================
+LLM Output (2 step(s)):
+[
+  {
+    "action": "get",
+    "target-class": "apple",
+    "target-modifiers": [
+      "green"
+    ]
+  },
+  {
+    "action": "set"
+  }
+]
+
+LLM Token Usage: input=705, output=62, total=1315
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action get)
+    (<cmd1> ^target-class apple)
+    (<cmd1> ^target-modifiers green)
+    (<cmd1> ^next <cmd2>)
+    (<cmd2> ^action set)
+    (<cmd2> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    O: O2 (move)
+[ACTION] Agent moved from loc_0_0 to loc_3_3
+     3:    O: O3 (get)
+[ACTION] Agent got apple_02 at loc_3_3
+     4:    O: O4 (transition-command)
+[SYSTEM] Command finished. Transitioning to next command...
+     5:    O: O5 (infer-target)
+     6:    O: O6 (set-object)
+[ACTION] Agent set apple_02 at loc_3_3
+     7:    ==>S: S2 (state no-change)
+[SUCCESS] Command sequence execution complete. Agent is idle.
+
+==================================================
+CMD-25: Drop the item.
+==================================================
+LLM Output (1 step(s)):
+[
+  {
+    "action": "set"
+  }
+]
+
+LLM Token Usage: input=699, output=22, total=1131
+
+Soar Output (Soar Code):
+sp {apply*init-environment*commands
+    (state <s> ^operator <o>)
+    (<o> ^name init-environment)
+-->
+    (<s> ^command <cmd1>)
+    (<cmd1> ^action set)
+    (<cmd1> ^next none)
+}
+
+Soar return code: 0
+Soar Execution:
+     1:    O: O1 (init-environment)
+     2:    ==>S: S2 (state no-change)
+[FAILURE] Command rejected by constraint: not-holding
+
+Overall elapsed time: 404.67 seconds
+LLM Token Totals: input=17561, output=1310, total=36124

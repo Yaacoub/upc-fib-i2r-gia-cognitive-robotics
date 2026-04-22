@@ -1,0 +1,25 @@
+Move to (2,2).
+Move to [-1, 5].
+Move north.
+Move east.
+Move south.
+Move west.
+Move up.
+Move up by 2.
+Head towards the trashcan.
+Where is agent_01 located?
+Tell me the coordinates of the green apple.
+What are you holding?
+Pick up the green apple, then tell me what you are holding.
+Is the yellow cup on the table?
+Is the blue cup on the table?
+Does the trashcan contain the green apple?
+Does the trashcan contain the red apple?
+Bring the green apple to loc_0_0.
+Fetch the yellow cup and put it in the trashcan.
+Throw the red fruit into the bin.
+Bring the red apple to loc_1_3.
+Pick up the green apple, then pick up the yellow cup.
+Pick up the table.
+Pick up the green apple, then drop it.
+Drop the item.

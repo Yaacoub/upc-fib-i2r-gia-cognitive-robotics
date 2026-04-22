@@ -1,0 +1,56 @@
+# Exercises extrapolate-x-position, extrapolate-y-position, and select-point-closest-to-vector RHS functions
+
+sp {elaborate*predict-position*variables
+  (state <s> ^superstate nil)
+-->
+  (<s> ^current-x 0
+       ^current-y 0
+       ^heading 120
+       ^speed 10
+       ^elapsed-time 2)
+}
+
+#Result for extrapolate-x-position is 10
+sp {test*rhs*extrapolate-x-position
+  (state <s> ^current-x <x>
+       ^heading <heading>
+       ^speed <speed>
+       ^elapsed-time <time>)
+-->
+  (<s> ^new-x-position (extrapolate-x-position <x> <heading> <speed> <time>))
+}
+
+#Result for extrapolate-y-position is 17
+sp {test*rhs*extrapolate-y-position
+  (state <s> ^current-y <y>
+       ^heading <heading>
+       ^speed <speed>
+       ^elapsed-time <time>)
+-->
+  (<s> ^new-y-position (extrapolate-y-position <y> <heading> <speed> <time>))
+}
+
+sp {elaborate*locations
+  (state <s> ^superstate nil)
+-->
+  (<s> ^locations <locations>)
+  (<locations> ^point <a> <b> <c> <d> <e> <f> <g> <h>)
+  (<a> ^x 5 ^y 0 ^id |east-location|)
+  (<b> ^x 5 ^y -5 ^id |northeast-location|)
+  (<c> ^x 0 ^y -5 ^id |north-location|)
+  (<d> ^x -5 ^y -5 ^id |northwest-location|)
+  (<e> ^x -5 ^y 0 ^id |west-location|)
+  (<f> ^x -5 ^y 5 ^id |southwest-location|)
+  (<g> ^x 0 ^y 5 ^id |south-location|)
+  (<h> ^x 5 ^y 5 ^id |southeast-location|)
+}
+
+# Result for select-point-closest-to-vector is southeast-location
+sp {test*rhs*select-point-closest-to-vector
+  (state <s> ^current-y <y>
+       ^current-x <x>
+       ^heading <heading>
+       ^locations <locations>)
+-->
+  (<s> ^predicted-destination (select-point-closest-to-vector <x> <y> <heading> <locations>))
+}
