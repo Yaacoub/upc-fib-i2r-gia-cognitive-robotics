@@ -1,0 +1,11 @@
+## Environment (OWL-derived initial state)
+Grid is 4x4 with coordinates [0,0] bottom-left to [3,3] top-right.
+- Agent is at location loc_0_0 coordinates [0,0].
+- Agent is holding: nothing.
+- Objects (excluding pure grid cells):
+  - apple_02: types [apple], color=green on loc_3_3 at [3,3].
+  - cup_02: types [cup], color=yellow on loc_3_0 at [3,0].
+  - apple_01: types [apple], color=red on loc_0_3 at [0,3].
+  - table_01: types [table] on loc_3_0 at [3,0].
+  - cup_01: types [cup], color=blue on loc_1_3 at [1,3].
+  - trashcan_01: types [trashcan] on loc_3_3 at [3,3].

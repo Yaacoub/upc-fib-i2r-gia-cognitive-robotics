@@ -1,0 +1,820 @@
+{
+  "run": 3,
+  "parsed_actions": {
+    "CMD-01-R03": [
+      {
+        "action": "move",
+        "desired-x": 2,
+        "desired-y": 2
+      }
+    ],
+    "CMD-02-R03": [
+      {
+        "action": "move",
+        "desired-x": -1,
+        "desired-y": 5
+      }
+    ],
+    "CMD-03-R03": [
+      {
+        "action": "move",
+        "direction": "north"
+      }
+    ],
+    "CMD-04-R03": [
+      {
+        "action": "move",
+        "direction": "east"
+      }
+    ],
+    "CMD-05-R03": [
+      {
+        "action": "move",
+        "direction": "south"
+      }
+    ],
+    "CMD-06-R03": [
+      {
+        "action": "move",
+        "direction": "west"
+      }
+    ],
+    "CMD-07-R03": [
+      {
+        "action": "move",
+        "direction": "north",
+        "distance": 2
+      }
+    ],
+    "CMD-08-R03": [
+      {
+        "action": "move",
+        "direction": "south",
+        "distance": 3
+      }
+    ],
+    "CMD-09-R03": [
+      {
+        "action": "move",
+        "distance": 5
+      }
+    ],
+    "CMD-10-R03": [
+      {
+        "action": "query-location",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      }
+    ],
+    "CMD-11-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "red"
+        ]
+      },
+      {
+        "action": "set",
+        "desired-x": 1,
+        "desired-y": 3
+      }
+    ],
+    "CMD-12-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      },
+      {
+        "action": "set",
+        "desired-x": 0,
+        "desired-y": 0
+      }
+    ],
+    "CMD-13-R03": [
+      {
+        "action": "query-location",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ]
+      }
+    ],
+    "CMD-14-R03": [
+      {
+        "action": "query-location",
+        "target-class": "cup",
+        "target-modifiers": [
+          "blue"
+        ]
+      }
+    ],
+    "CMD-15-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      }
+    ],
+    "CMD-16-R03": [
+      {
+        "action": "get",
+        "target-class": "cup",
+        "target-modifiers": [
+          "blue"
+        ]
+      }
+    ],
+    "CMD-17-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "dirty",
+          "green"
+        ]
+      }
+    ],
+    "CMD-18-R03": [
+      {
+        "action": "query-location",
+        "target-class": "cup",
+        "target-modifiers": [
+          "blue",
+          "02"
+        ]
+      }
+    ],
+    "CMD-19-R03": [
+      {
+        "action": "query-location",
+        "target-class": "apple"
+      }
+    ],
+    "CMD-20-R03": [
+      {
+        "action": "query-location",
+        "target-class": "apple",
+        "target-modifiers": [
+          "red"
+        ]
+      }
+    ],
+    "CMD-21-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ],
+        "destination-class": "table"
+      }
+    ],
+    "CMD-22-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ],
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-23-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "apple",
+        "target-modifiers": [
+          "red"
+        ],
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-24-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ],
+        "destination-class": "table"
+      }
+    ],
+    "CMD-25-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "agent",
+        "destination-class": "table"
+      }
+    ],
+    "CMD-26-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ],
+        "destination-class": "table"
+      }
+    ],
+    "CMD-27-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "agent",
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-28-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ],
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-29-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "cup",
+        "destination-class": "trashcan",
+        "destination-modifiers": [
+          "blue"
+        ]
+      }
+    ],
+    "CMD-30-R03": [
+      {
+        "action": "move",
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-31-R03": [
+      {
+        "action": "query-location",
+        "target-class": "agent",
+        "target-modifiers": [
+          "01"
+        ]
+      }
+    ],
+    "CMD-32-R03": [
+      {
+        "action": "query-inventory",
+        "target-class": "agent"
+      }
+    ],
+    "CMD-33-R03": [
+      {
+        "action": "set"
+      }
+    ],
+    "CMD-34-R03": [
+      {
+        "action": "get",
+        "target-class": "table"
+      }
+    ],
+    "CMD-35-R03": [
+      {
+        "action": "move"
+      }
+    ],
+    "CMD-36-R03": [
+      {
+        "action": "set",
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-37-R03": [
+      {
+        "action": "get"
+      }
+    ],
+    "CMD-38-R03": [
+      {
+        "action": "set"
+      }
+    ],
+    "CMD-39-R03": [
+      {
+        "action": "set",
+        "desired-x": 4,
+        "desired-y": 4
+      }
+    ],
+    "CMD-40-R03": [
+      {
+        "action": "set",
+        "destination-class": "table"
+      }
+    ],
+    "CMD-41-R03": [
+      {
+        "action": "get",
+        "target-class": "table"
+      },
+      {
+        "action": "set",
+        "destination-class": "cup"
+      }
+    ],
+    "CMD-42-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      }
+    ],
+    "CMD-43-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      },
+      {
+        "action": "query-inventory",
+        "target-class": "agent"
+      }
+    ],
+    "CMD-44-R03": [
+      {
+        "action": "get",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ]
+      },
+      {
+        "action": "set",
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-45-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "red"
+        ]
+      },
+      {
+        "action": "set",
+        "destination-class": "trashcan"
+      }
+    ],
+    "CMD-46-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "red"
+        ]
+      },
+      {
+        "action": "set",
+        "destination-class": "table",
+        "destination-modifiers": [
+          "big"
+        ]
+      }
+    ],
+    "CMD-47-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      },
+      {
+        "action": "get",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ]
+      }
+    ],
+    "CMD-48-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "green"
+        ]
+      },
+      {
+        "action": "set"
+      }
+    ],
+    "CMD-49-R03": [
+      {
+        "action": "move",
+        "direction": "north"
+      },
+      {
+        "action": "get",
+        "target-class": "cup",
+        "target-modifiers": [
+          "blue"
+        ]
+      }
+    ],
+    "CMD-50-R03": [
+      {
+        "action": "get",
+        "target-class": "apple",
+        "target-modifiers": [
+          "red"
+        ]
+      },
+      {
+        "action": "set",
+        "destination-class": "table"
+      }
+    ],
+    "CMD-51-R03": [
+      {
+        "action": "get",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ]
+      },
+      {
+        "action": "set",
+        "desired-x": 2,
+        "desired-y": 2
+      },
+      {
+        "action": "move",
+        "direction": "south"
+      }
+    ],
+    "CMD-52-R03": [
+      {
+        "action": "query-boolean",
+        "target-class": "cup",
+        "target-modifiers": [
+          "yellow"
+        ],
+        "destination-class": "table"
+      },
+      {
+        "action": "move",
+        "direction": "east"
+      }
+    ],
+    "CMD-53-R03": [
+      {
+        "action": "get",
+        "target-class": "cup",
+        "target-modifiers": [
+          "blue"
+        ]
+      },
+      {
+        "action": "set",
+        "destination-class": "trashcan"
+      },
+      {
+        "action": "move",
+        "direction": "west"
+      }
+    ]
+  },
+  "token_usages": {
+    "CMD-01-R03": {
+      "prompt": 713,
+      "completion": 41,
+      "total": 893
+    },
+    "CMD-02-R03": {
+      "prompt": 714,
+      "completion": 23,
+      "total": 948
+    },
+    "CMD-03-R03": {
+      "prompt": 709,
+      "completion": 14,
+      "total": 839
+    },
+    "CMD-04-R03": {
+      "prompt": 709,
+      "completion": 30,
+      "total": 858
+    },
+    "CMD-05-R03": {
+      "prompt": 709,
+      "completion": 14,
+      "total": 839
+    },
+    "CMD-06-R03": {
+      "prompt": 709,
+      "completion": 30,
+      "total": 858
+    },
+    "CMD-07-R03": {
+      "prompt": 712,
+      "completion": 37,
+      "total": 1420
+    },
+    "CMD-08-R03": {
+      "prompt": 712,
+      "completion": 37,
+      "total": 1313
+    },
+    "CMD-09-R03": {
+      "prompt": 712,
+      "completion": 29,
+      "total": 1535
+    },
+    "CMD-10-R03": {
+      "prompt": 715,
+      "completion": 50,
+      "total": 969
+    },
+    "CMD-11-R03": {
+      "prompt": 717,
+      "completion": 81,
+      "total": 1625
+    },
+    "CMD-12-R03": {
+      "prompt": 717,
+      "completion": 81,
+      "total": 3162
+    },
+    "CMD-13-R03": {
+      "prompt": 712,
+      "completion": 50,
+      "total": 1014
+    },
+    "CMD-14-R03": {
+      "prompt": 712,
+      "completion": 50,
+      "total": 1002
+    },
+    "CMD-15-R03": {
+      "prompt": 712,
+      "completion": 48,
+      "total": 960
+    },
+    "CMD-16-R03": {
+      "prompt": 712,
+      "completion": 48,
+      "total": 991
+    },
+    "CMD-17-R03": {
+      "prompt": 713,
+      "completion": 53,
+      "total": 1012
+    },
+    "CMD-18-R03": {
+      "prompt": 716,
+      "completion": 56,
+      "total": 1049
+    },
+    "CMD-19-R03": {
+      "prompt": 711,
+      "completion": 34,
+      "total": 900
+    },
+    "CMD-20-R03": {
+      "prompt": 715,
+      "completion": 50,
+      "total": 1069
+    },
+    "CMD-21-R03": {
+      "prompt": 714,
+      "completion": 60,
+      "total": 1299
+    },
+    "CMD-22-R03": {
+      "prompt": 715,
+      "completion": 61,
+      "total": 1147
+    },
+    "CMD-23-R03": {
+      "prompt": 715,
+      "completion": 61,
+      "total": 1111
+    },
+    "CMD-24-R03": {
+      "prompt": 714,
+      "completion": 60,
+      "total": 1284
+    },
+    "CMD-25-R03": {
+      "prompt": 714,
+      "completion": 44,
+      "total": 1088
+    },
+    "CMD-26-R03": {
+      "prompt": 714,
+      "completion": 60,
+      "total": 1196
+    },
+    "CMD-27-R03": {
+      "prompt": 713,
+      "completion": 45,
+      "total": 1798
+    },
+    "CMD-28-R03": {
+      "prompt": 715,
+      "completion": 61,
+      "total": 1166
+    },
+    "CMD-29-R03": {
+      "prompt": 715,
+      "completion": 61,
+      "total": 1219
+    },
+    "CMD-30-R03": {
+      "prompt": 712,
+      "completion": 33,
+      "total": 974
+    },
+    "CMD-31-R03": {
+      "prompt": 714,
+      "completion": 51,
+      "total": 1057
+    },
+    "CMD-32-R03": {
+      "prompt": 711,
+      "completion": 18,
+      "total": 937
+    },
+    "CMD-33-R03": {
+      "prompt": 710,
+      "completion": 22,
+      "total": 1297
+    },
+    "CMD-34-R03": {
+      "prompt": 711,
+      "completion": 32,
+      "total": 946
+    },
+    "CMD-35-R03": {
+      "prompt": 710,
+      "completion": 8,
+      "total": 1089
+    },
+    "CMD-36-R03": {
+      "prompt": 710,
+      "completion": 33,
+      "total": 1250
+    },
+    "CMD-37-R03": {
+      "prompt": 709,
+      "completion": 22,
+      "total": 3364
+    },
+    "CMD-38-R03": {
+      "prompt": 710,
+      "completion": 22,
+      "total": 1263
+    },
+    "CMD-39-R03": {
+      "prompt": 715,
+      "completion": 41,
+      "total": 1946
+    },
+    "CMD-40-R03": {
+      "prompt": 712,
+      "completion": 32,
+      "total": 1078
+    },
+    "CMD-41-R03": {
+      "prompt": 713,
+      "completion": 56,
+      "total": 1773
+    },
+    "CMD-42-R03": {
+      "prompt": 723,
+      "completion": 48,
+      "total": 1079
+    },
+    "CMD-43-R03": {
+      "prompt": 720,
+      "completion": 74,
+      "total": 1146
+    },
+    "CMD-44-R03": {
+      "prompt": 718,
+      "completion": 72,
+      "total": 1744
+    },
+    "CMD-45-R03": {
+      "prompt": 714,
+      "completion": 73,
+      "total": 1511
+    },
+    "CMD-46-R03": {
+      "prompt": 715,
+      "completion": 88,
+      "total": 1752
+    },
+    "CMD-47-R03": {
+      "prompt": 719,
+      "completion": 87,
+      "total": 1324
+    },
+    "CMD-48-R03": {
+      "prompt": 716,
+      "completion": 62,
+      "total": 2590
+    },
+    "CMD-49-R03": {
+      "prompt": 716,
+      "completion": 70,
+      "total": 1443
+    },
+    "CMD-50-R03": {
+      "prompt": 717,
+      "completion": 72,
+      "total": 1272
+    },
+    "CMD-51-R03": {
+      "prompt": 721,
+      "completion": 98,
+      "total": 2175
+    },
+    "CMD-52-R03": {
+      "prompt": 720,
+      "completion": 82,
+      "total": 1231
+    },
+    "CMD-53-R03": {
+      "prompt": 723,
+      "completion": 95,
+      "total": 2084
+    }
+  },
+  "parse_times": {
+    "CMD-01-R03": 4.516819957992993,
+    "CMD-02-R03": 5.69887458300218,
+    "CMD-03-R03": 3.35373679199256,
+    "CMD-04-R03": 3.7935972499544732,
+    "CMD-05-R03": 3.506695292016957,
+    "CMD-06-R03": 3.9274239580263384,
+    "CMD-07-R03": 15.510626749950461,
+    "CMD-08-R03": 13.31242079200456,
+    "CMD-09-R03": 18.015008334012236,
+    "CMD-10-R03": 5.962498291977681,
+    "CMD-11-R03": 19.697096916963346,
+    "CMD-12-R03": 52.00557320803637,
+    "CMD-13-R03": 7.210299792001024,
+    "CMD-14-R03": 6.891915249987505,
+    "CMD-15-R03": 6.001407707983162,
+    "CMD-16-R03": 6.787419750005938,
+    "CMD-17-R03": 7.0004982920363545,
+    "CMD-18-R03": 7.692816833034158,
+    "CMD-19-R03": 4.800799750024453,
+    "CMD-20-R03": 8.14961966703413,
+    "CMD-21-R03": 13.013495167018846,
+    "CMD-22-R03": 9.789281874953303,
+    "CMD-23-R03": 9.014309583988506,
+    "CMD-24-R03": 12.700921707961243,
+    "CMD-25-R03": 8.527409709000494,
+    "CMD-26-R03": 10.849493584013544,
+    "CMD-27-R03": 23.491323542024475,
+    "CMD-28-R03": 10.140065332991071,
+    "CMD-29-R03": 11.365926667000167,
+    "CMD-30-R03": 6.236634750035591,
+    "CMD-31-R03": 7.869029082998168,
+    "CMD-32-R03": 5.3978552499902435,
+    "CMD-33-R03": 15.505901457974687,
+    "CMD-34-R03": 5.81501537503209,
+    "CMD-35-R03": 8.843217583023943,
+    "CMD-36-R03": 12.151130291982554,
+    "CMD-37-R03": 56.22731762495823,
+    "CMD-38-R03": 12.451416541007347,
+    "CMD-39-R03": 26.739732999994885,
+    "CMD-40-R03": 8.348965540993959,
+    "CMD-41-R03": 23.015453000029083,
+    "CMD-42-R03": 8.053033375006635,
+    "CMD-43-R03": 9.854718792019412,
+    "CMD-44-R03": 22.382422833994497,
+    "CMD-45-R03": 22.123301208019257,
+    "CMD-46-R03": 22.689835375000257,
+    "CMD-47-R03": 13.543832209019456,
+    "CMD-48-R03": 40.34717575000832,
+    "CMD-49-R03": 16.02000495797256,
+    "CMD-50-R03": 12.41480233403854,
+    "CMD-51-R03": 31.339342207997106,
+    "CMD-52-R03": 11.532120166986715,
+    "CMD-53-R03": 29.349474500049837
+  }
+}

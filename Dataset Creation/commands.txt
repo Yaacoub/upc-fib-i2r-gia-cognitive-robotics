@@ -1,0 +1,67 @@
+# Simple
+# ========================================
+Move to (2,2).
+Move to [-1, 5].
+Move north.
+Move east.
+Move south.
+Move west.
+Move up by 2.
+Move down by 3.
+Move forward 5 steps.
+
+# Attribute-based
+# ========================================
+Tell me the coordinates of the green apple.
+Bring the red apple to loc_1_3.
+Bring the green apple to loc_0_0.
+Where is the yellow cup?
+Where is the blue cup?
+Pick up the green apple.
+Pick up the blue cup.
+Pick up the dirty green apple.
+Where is cup_02 that is blue?
+Where is the apple?
+Tell me the coordinates of the red apple.
+
+# Spatial Relations
+# ========================================
+Is the yellow cup on the table?
+Does the trashcan contain the green apple?
+Does the trashcan contain the red apple?
+Is the green apple on the table?
+Is the agent next to the table?
+Does the table hold the green apple?
+Are you near the trashcan?
+Is the yellow cup inside the trashcan?
+Is the cup in the blue trashcan?
+
+# Ambiguous
+# ========================================
+Head towards the trashcan.
+Where is agent_01 located?
+What are you holding?
+Drop the item.
+Pick up the table.
+Go over there.
+Throw it away.
+Grab it.
+Put it down.
+Bring it to loc_4_4.
+Put that on the table.
+Put the table inside the cup.
+Hello robot, please be nice and pick up the green apple for me. Thanks!
+
+# Multi-step
+# ========================================
+Pick up the green apple, then tell me what you are holding.
+Fetch the yellow cup and put it in the trashcan.
+Throw the red fruit into the bin.
+Put the red apple on the big table.
+Pick up the green apple, then pick up the yellow cup.
+Pick up the green apple, then drop it.
+Move north, then pick up the blue cup.
+Get the red apple and drop it on the table.
+Bring the yellow cup to loc_2_2 and then move south.
+Check if the yellow cup is on the table, then move east.
+Pick up the blue cup, drop it in the trashcan, and move west.

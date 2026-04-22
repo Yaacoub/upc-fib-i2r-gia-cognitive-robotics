@@ -1,0 +1,203 @@
+# MARK:- Proposals
+# ========================================
+
+sp {propose*query-location
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <target-obj>)
+
+    (<cmd> ^action query-location
+        ^target-object <target-id>
+        -^status completed)
+    
+    (<target-obj> ^id <target-id>)
+-->
+    (<s> ^operator <o> + =)
+    (<o> ^name query-location
+        ^target <target-obj>)
+}
+
+sp {propose*query-inventory
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <agent>)
+
+    (<cmd> ^action query-inventory
+        ^target-object <agent-id>
+        -^status completed)
+    
+    (<agent> ^id <agent-id>)
+-->
+    (<s> ^operator <o> + =)
+    (<o> ^name query-inventory
+        ^agent <agent>)
+}
+
+sp {propose*query-boolean
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <target-obj>)
+
+    (<cmd> ^action query-boolean
+        ^target-object <target-id>
+        -^destination-class
+        -^status completed)
+
+    (<target-obj> ^id <target-id>)
+-->
+    (<s> ^operator <o> + =)
+    (<o> ^name query-boolean
+        ^target <target-obj>)
+}
+
+sp {propose*query-boolean*relational
+    (state <s> ^name cognitive-robotics
+        ^command <cmd>
+        ^environment.entity <target-obj>
+        ^environment.entity <dest-obj>)
+
+    (<cmd> ^action query-boolean
+        ^target-object <target-id>
+        ^destination-class <dest-class>
+        -^status completed)
+        
+    (<target-obj> ^id <target-id>)
+    (<dest-obj> ^type <dest-class>)
+-->
+    (<s> ^operator <o> + =)
+    (<o> ^name query-boolean
+        ^target <target-obj>
+        ^destination <dest-obj>)
+}
+
+
+
+# MARK:- Applications
+# ========================================
+
+sp {apply*query-location
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^io.output-link <out>)
+
+    (<o> ^name query-location
+        ^target <target-obj>)
+
+    (<target-obj> ^id <target-id>
+        ^isatlocation <loc-name>)
+-->
+    (write (crlf) |[QUERY] | <target-id> | is at | <loc-name>)
+    (<out> ^response <r>)
+    (<r> ^type location-query
+        ^object <target-id>
+        ^found-at <loc-name>)
+
+    (<cmd> ^status completed)
+}
+
+sp {apply*query-location*unknown
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^io.output-link <out>)
+        
+    (<o> ^name query-location
+        ^target <target-obj>)
+
+    (<target-obj> ^id <target-id>
+        -^isatlocation)
+-->
+    (write (crlf) |[QUERY] Location of | <target-id> | is UNKNOWN|)
+    (<out> ^response <r>)
+    (<r> ^type location-query
+        ^value unknown)
+    
+    (<cmd> ^status completed)
+}
+
+sp {apply*query-inventory
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^io.output-link <out>)
+
+    (<o> ^name query-inventory
+        ^agent <agent>)
+
+    (<agent> ^id <agent-id>
+        ^isholding <held-obj>)
+
+    (<held-obj> ^id <held-obj-id>)
+-->
+    (write (crlf) |[QUERY] | <agent-id> | is holding | <held-obj-id>)
+    (<out> ^response <r>)
+    (<r> ^type inventory-query
+        ^holding <held-obj-id>)
+
+    (<cmd> ^status completed)
+}
+
+sp {apply*query-inventory*empty
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^io.output-link <out>)
+
+    (<o> ^name query-inventory
+        ^agent <agent>)
+        
+    (<agent> ^id <agent-id>
+        -^isholding <any>)
+-->
+    (write (crlf) |[QUERY] | <agent-id> | is holding nothing|)
+    (<out> ^response <r>)
+    (<r> ^type inventory-query
+        ^holding none)
+
+    (<cmd> ^status completed)
+}
+
+sp {apply*query-boolean*relational*true
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^io.output-link <out>)
+        
+    (<o> ^name query-boolean
+        ^target <target-obj>
+        ^destination <dest-obj>)
+
+    (<cmd> ^destination-class <dest-class>)
+    (<target-obj> ^id <target-id>
+        ^isatlocation <loc>)
+
+    (<dest-obj> ^type <dest-class>
+        ^isatlocation <loc>)
+-->
+    (write (crlf) |[QUERY] Is | <target-id> | at/in | <dest-class> |? TRUE|)
+    (<out> ^response <r>)
+    (<r> ^type boolean-query
+        ^value true)
+
+    (<cmd> ^status completed)
+}
+
+sp {apply*query-boolean*relational*false
+    (state <s> ^operator <o>
+        ^command <cmd>
+        ^io.output-link <out>)
+        
+    (<o> ^name query-boolean
+        ^target <target-obj>
+        ^destination <dest-obj>)
+
+    (<cmd> ^destination-class <dest-class>)
+    (<target-obj> ^id <target-id>
+        -^isatlocation <loc>)
+        
+    (<dest-obj> ^type <dest-class>
+        ^isatlocation <loc>)
+-->
+    (write (crlf) |[QUERY] Is | <target-id> | at/in | <dest-class> |? FALSE|)
+    (<out> ^response <r>)
+    (<r> ^type boolean-query
+        ^value false)
+
+    (<cmd> ^status completed)
+}

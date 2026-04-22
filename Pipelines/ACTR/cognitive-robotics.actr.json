@@ -1,0 +1,652 @@
+{
+  "metadata": {
+    "source": "cognitive-robotics.rdf",
+    "format": "act-r-inspired-declarative-memory",
+    "chunk_count": 41
+  },
+  "chunks": [
+    {
+      "name": "agent_01",
+      "isa": "agent",
+      "slots": {
+        "id": "agent_01",
+        "type": [
+          "agent"
+        ],
+        "all_types": [
+          "agent",
+          "robot"
+        ],
+        "isatlocation": "loc_0_0"
+      }
+    },
+    {
+      "name": "apple_01",
+      "isa": "apple",
+      "slots": {
+        "id": "apple_01",
+        "type": [
+          "apple"
+        ],
+        "all_types": [
+          "apple",
+          "manipulableobject",
+          "physicalobject"
+        ],
+        "hascolor": "red",
+        "isatlocation": "loc_0_3"
+      }
+    },
+    {
+      "name": "apple_02",
+      "isa": "apple",
+      "slots": {
+        "id": "apple_02",
+        "type": [
+          "apple"
+        ],
+        "all_types": [
+          "apple",
+          "manipulableobject",
+          "physicalobject"
+        ],
+        "hascolor": "green",
+        "isatlocation": "loc_3_3"
+      }
+    },
+    {
+      "name": "agent",
+      "isa": "class",
+      "slots": {
+        "id": "agent",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "robot"
+      }
+    },
+    {
+      "name": "apple",
+      "isa": "class",
+      "slots": {
+        "id": "apple",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "manipulableobject"
+      }
+    },
+    {
+      "name": "cup",
+      "isa": "class",
+      "slots": {
+        "id": "cup",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "manipulableobject"
+      }
+    },
+    {
+      "name": "environment",
+      "isa": "class",
+      "slots": {
+        "id": "environment",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "roboticenvironment"
+      }
+    },
+    {
+      "name": "gridlocation",
+      "isa": "class",
+      "slots": {
+        "id": "gridlocation",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "environment"
+      }
+    },
+    {
+      "name": "manipulableobject",
+      "isa": "class",
+      "slots": {
+        "id": "manipulableobject",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "physicalobject"
+      }
+    },
+    {
+      "name": "physicalobject",
+      "isa": "class",
+      "slots": {
+        "id": "physicalobject",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ]
+      }
+    },
+    {
+      "name": "staticobject",
+      "isa": "class",
+      "slots": {
+        "id": "staticobject",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "physicalobject"
+      }
+    },
+    {
+      "name": "table",
+      "isa": "class",
+      "slots": {
+        "id": "table",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "staticobject"
+      }
+    },
+    {
+      "name": "trashcan",
+      "isa": "class",
+      "slots": {
+        "id": "trashcan",
+        "type": [
+          "class"
+        ],
+        "all_types": [
+          "class"
+        ],
+        "subclassof": "staticobject"
+      }
+    },
+    {
+      "name": "cup_01",
+      "isa": "cup",
+      "slots": {
+        "id": "cup_01",
+        "type": [
+          "cup"
+        ],
+        "all_types": [
+          "cup",
+          "manipulableobject",
+          "physicalobject"
+        ],
+        "hascolor": "blue",
+        "isatlocation": "loc_1_3"
+      }
+    },
+    {
+      "name": "cup_02",
+      "isa": "cup",
+      "slots": {
+        "id": "cup_02",
+        "type": [
+          "cup"
+        ],
+        "all_types": [
+          "cup",
+          "manipulableobject",
+          "physicalobject"
+        ],
+        "hascolor": "yellow",
+        "isatlocation": "loc_3_0"
+      }
+    },
+    {
+      "name": "hascolor",
+      "isa": "datatypeproperty",
+      "slots": {
+        "id": "hascolor",
+        "type": [
+          "datatypeproperty"
+        ],
+        "all_types": [
+          "datatypeproperty"
+        ],
+        "range": "string"
+      }
+    },
+    {
+      "name": "hasxcoordinate",
+      "isa": "datatypeproperty",
+      "slots": {
+        "id": "hasxcoordinate",
+        "type": [
+          "datatypeproperty"
+        ],
+        "all_types": [
+          "datatypeproperty"
+        ],
+        "range": "int"
+      }
+    },
+    {
+      "name": "hasycoordinate",
+      "isa": "datatypeproperty",
+      "slots": {
+        "id": "hasycoordinate",
+        "type": [
+          "datatypeproperty"
+        ],
+        "all_types": [
+          "datatypeproperty"
+        ],
+        "range": "int"
+      }
+    },
+    {
+      "name": "isatlocation",
+      "isa": "functionalproperty",
+      "slots": {
+        "id": "isatlocation",
+        "type": [
+          "functionalproperty",
+          "objectproperty"
+        ],
+        "all_types": [
+          "functionalproperty",
+          "objectproperty"
+        ],
+        "domain": "n306912d9ccf5453187737c1a3f26afec",
+        "range": "gridlocation"
+      }
+    },
+    {
+      "name": "loc_0_0",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_0_0",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 0,
+        "hasycoordinate": 0
+      }
+    },
+    {
+      "name": "loc_0_1",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_0_1",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 0,
+        "hasycoordinate": 1
+      }
+    },
+    {
+      "name": "loc_0_2",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_0_2",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 0,
+        "hasycoordinate": 2
+      }
+    },
+    {
+      "name": "loc_0_3",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_0_3",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 0,
+        "hasycoordinate": 3
+      }
+    },
+    {
+      "name": "loc_1_0",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_1_0",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 1,
+        "hasycoordinate": 0
+      }
+    },
+    {
+      "name": "loc_1_1",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_1_1",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 1,
+        "hasycoordinate": 1
+      }
+    },
+    {
+      "name": "loc_1_2",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_1_2",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 1,
+        "hasycoordinate": 2
+      }
+    },
+    {
+      "name": "loc_1_3",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_1_3",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 1,
+        "hasycoordinate": 3
+      }
+    },
+    {
+      "name": "loc_2_0",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_2_0",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 2,
+        "hasycoordinate": 0
+      }
+    },
+    {
+      "name": "loc_2_1",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_2_1",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 2,
+        "hasycoordinate": 1
+      }
+    },
+    {
+      "name": "loc_2_2",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_2_2",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 2,
+        "hasycoordinate": 2
+      }
+    },
+    {
+      "name": "loc_2_3",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_2_3",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 2,
+        "hasycoordinate": 3
+      }
+    },
+    {
+      "name": "loc_3_0",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_3_0",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 3,
+        "hasycoordinate": 0
+      }
+    },
+    {
+      "name": "loc_3_1",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_3_1",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 3,
+        "hasycoordinate": 1
+      }
+    },
+    {
+      "name": "loc_3_2",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_3_2",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 3,
+        "hasycoordinate": 2
+      }
+    },
+    {
+      "name": "loc_3_3",
+      "isa": "gridlocation",
+      "slots": {
+        "id": "loc_3_3",
+        "type": [
+          "gridlocation"
+        ],
+        "all_types": [
+          "environment",
+          "gridlocation",
+          "roboticenvironment"
+        ],
+        "hasxcoordinate": 3,
+        "hasycoordinate": 3
+      }
+    },
+    {
+      "name": "containsobject",
+      "isa": "objectproperty",
+      "slots": {
+        "id": "containsobject",
+        "type": [
+          "objectproperty"
+        ],
+        "all_types": [
+          "objectproperty"
+        ],
+        "inverseof": "isatlocation"
+      }
+    },
+    {
+      "name": "isheldby",
+      "isa": "objectproperty",
+      "slots": {
+        "id": "isheldby",
+        "type": [
+          "objectproperty"
+        ],
+        "all_types": [
+          "objectproperty"
+        ],
+        "inverseof": "isholding"
+      }
+    },
+    {
+      "name": "isholding",
+      "isa": "objectproperty",
+      "slots": {
+        "id": "isholding",
+        "type": [
+          "objectproperty"
+        ],
+        "all_types": [
+          "objectproperty"
+        ],
+        "domain": "robot",
+        "range": "manipulableobject"
+      }
+    },
+    {
+      "name": "isontopof",
+      "isa": "objectproperty",
+      "slots": {
+        "id": "isontopof",
+        "type": [
+          "objectproperty"
+        ],
+        "all_types": [
+          "objectproperty"
+        ],
+        "domain": "manipulableobject",
+        "range": "physicalobject"
+      }
+    },
+    {
+      "name": "table_01",
+      "isa": "table",
+      "slots": {
+        "id": "table_01",
+        "type": [
+          "table"
+        ],
+        "all_types": [
+          "physicalobject",
+          "staticobject",
+          "table"
+        ],
+        "isatlocation": "loc_3_0"
+      }
+    },
+    {
+      "name": "trashcan_01",
+      "isa": "trashcan",
+      "slots": {
+        "id": "trashcan_01",
+        "type": [
+          "trashcan"
+        ],
+        "all_types": [
+          "physicalobject",
+          "staticobject",
+          "trashcan"
+        ],
+        "isatlocation": "loc_3_3"
+      }
+    }
+  ]
+}
